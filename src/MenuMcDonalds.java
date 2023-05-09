@@ -25,14 +25,14 @@ public class MenuMcDonalds extends JFrame implements ActionListener {
 
         // Configurar los precios de los productos
         itemPrices.put("Big Mac", 4.99);
-        itemPrices.put("Cuarto de libra", 5.99);
+        itemPrices.put("McExtreme", 5.99);
         itemPrices.put("McNífica", 6.99);
-        itemPrices.put("McPollo", 3.99);
+        itemPrices.put("McPollastre", 3.99);
         itemPrices.put("Coca-Cola", 1.99);
         itemPrices.put("Fanta", 1.99);
-        itemPrices.put("Agua", 0.99);
+        itemPrices.put("Aigua", 0.99);
         itemPrices.put("McFlurry", 2.99);
-        itemPrices.put("Sundae", 1.99);
+        itemPrices.put("Gelat Vainilla", 1.99);
 
         // Crear los paneles de los botones
         JPanel panelHamburguesas = new JPanel(new GridLayout(0, 1));
@@ -43,23 +43,23 @@ public class MenuMcDonalds extends JFrame implements ActionListener {
         addButton(panelHamburguesas, "Big Mac");
         addButton(panelHamburguesas, "McExtreme");
         addButton(panelHamburguesas, "McNífica");
-        addButton(panelHamburguesas, "McPollo");
+        addButton(panelHamburguesas, "McPollastre");
 
         // Crear los botones de bebidas
         addButton(panelBebidas, "Coca-Cola");
         addButton(panelBebidas, "Fanta");
-        addButton(panelBebidas, "Agua");
+        addButton(panelBebidas, "Aigua");
 
         // Crear los botones de postres
         addButton(panelPostres, "McFlurry");
-        addButton(panelPostres, "Sundae");
+        addButton(panelPostres, "Gelat Vainilla");
 
         // Crear el panel de precios
         JPanel panelPrecios = new JPanel(new BorderLayout());
         panelPrecios.add(priceLabel, BorderLayout.CENTER);
 
         // Crear el botón para finalizar la compra y reiniciar el precio total
-        JButton finishButton = new JButton("Finalizar compra");
+        JButton finishButton = new JButton("Finalitzar compra");
         finishButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
