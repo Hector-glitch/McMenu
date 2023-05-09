@@ -41,7 +41,7 @@ public class MenuMcDonalds extends JFrame implements ActionListener {
 
         // Crear los botones de hamburguesas
         addButton(panelHamburguesas, "Big Mac");
-        addButton(panelHamburguesas, "Cuarto de libra");
+        addButton(panelHamburguesas, "McExtreme");
         addButton(panelHamburguesas, "McNífica");
         addButton(panelHamburguesas, "McPollo");
 
