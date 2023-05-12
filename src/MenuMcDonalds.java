@@ -13,14 +13,14 @@ import javax.swing.JPanel;
 public class MenuMcDonalds extends JFrame implements ActionListener {
 
     private double totalPrice = 0.0;
-    private Map<String, Double> itemPrices = new HashMap<>();
-    private NumberFormat currencyFormat = NumberFormat.getCurrencyInstance();
+    private final Map<String, Double> itemPrices = new HashMap<>();
+    private final NumberFormat currencyFormat = NumberFormat.getCurrencyInstance();
 
-    private JLabel priceLabel = new JLabel("Total: " + currencyFormat.format(totalPrice));
+    private final JLabel priceLabel = new JLabel("Total: " + currencyFormat.format(totalPrice));
 
     public MenuMcDonalds() {
         setTitle("Menú de McDonald's");
-        setSize(400, 500);
+        setSize(500, 500);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         // Configurar los precios de los productos
@@ -33,26 +33,39 @@ public class MenuMcDonalds extends JFrame implements ActionListener {
         itemPrices.put("Aigua", 0.99);
         itemPrices.put("McFlurry", 2.99);
         itemPrices.put("Gelat Vainilla", 1.99);
+        itemPrices.put("Poma Podrida", 5.00);
 
         // Crear los paneles de los botones
         JPanel panelHamburguesas = new JPanel(new GridLayout(0, 1));
-        JPanel panelBebidas = new JPanel(new GridLayout(0, 1));
-        JPanel panelPostres = new JPanel(new GridLayout(0, 1));
+        JPanel panelBegudes = new JPanel(new GridLayout(4, 1));
+        JPanel panelPostres = new JPanel(new GridLayout(4, 1));
+
+        JLabel labelHamburguesas = new JLabel("Hamburguesas");
+        labelHamburguesas.setHorizontalAlignment(JLabel.CENTER);
 
         // Crear los botones de hamburguesas
+        panelHamburguesas.add(labelHamburguesas, BorderLayout.NORTH);
         addButton(panelHamburguesas, "Big Mac");
         addButton(panelHamburguesas, "McExtreme");
         addButton(panelHamburguesas, "McNífica");
-        addButton(panelHamburguesas, "McPollastre");
+
+        JLabel labelBegudes = new JLabel("Beufes");
+        labelBegudes.setHorizontalAlignment(JLabel.CENTER);
 
         // Crear los botones de bebidas
-        addButton(panelBebidas, "Coca-Cola");
-        addButton(panelBebidas, "Fanta");
-        addButton(panelBebidas, "Aigua");
+        panelBegudes.add(labelBegudes, BorderLayout.NORTH);
+        addButton(panelBegudes, "Coca-Cola");
+        addButton(panelBegudes, "Fanta");
+        addButton(panelBegudes, "Aigua");
+
+        JLabel labelPostres = new JLabel("Postres");
+        labelPostres.setHorizontalAlignment(JLabel.CENTER);
 
         // Crear los botones de postres
+        panelPostres.add(labelPostres, BorderLayout.NORTH);
         addButton(panelPostres, "McFlurry");
         addButton(panelPostres, "Gelat Vainilla");
+        addButton(panelPostres, "Poma Podrida");
 
         // Crear el panel de precios
         JPanel panelPrecios = new JPanel(new BorderLayout());
@@ -72,7 +85,7 @@ public class MenuMcDonalds extends JFrame implements ActionListener {
         // Crear el panel principal
         JPanel panelPrincipal = new JPanel(new GridLayout(0, 3));
         panelPrincipal.add(panelHamburguesas);
-        panelPrincipal.add(panelBebidas);
+        panelPrincipal.add(panelBegudes);
         panelPrincipal.add(panelPostres);
 
         // Agregar los paneles al marco
