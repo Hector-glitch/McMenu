@@ -13,10 +13,10 @@ import javax.swing.JPanel;
 public class MenuMcDonalds extends JFrame implements ActionListener {
 
     private double totalPrice = 0.0;
-    private final Map<String, Double> itemPrices = new HashMap<>();
-    private final NumberFormat currencyFormat = NumberFormat.getCurrencyInstance();
+    private Map<String, Double> itemPrices = new HashMap<>();
+    private NumberFormat currencyFormat = NumberFormat.getCurrencyInstance();
 
-    private final JLabel priceLabel = new JLabel("Total: " + currencyFormat.format(totalPrice));
+    private JLabel priceLabel = new JLabel("Total: " + currencyFormat.format(totalPrice));
 
     public MenuMcDonalds() {
         setTitle("Menú de McDonald's");
@@ -51,6 +51,7 @@ public class MenuMcDonalds extends JFrame implements ActionListener {
 
         JLabel labelBegudes = new JLabel("Begudes");
         labelBegudes.setHorizontalAlignment(JLabel.CENTER);
+
 
         // Crear los botones de bebidas
         panelBegudes.add(labelBegudes, BorderLayout.NORTH);
