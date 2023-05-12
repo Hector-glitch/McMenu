@@ -20,7 +20,7 @@ public class MenuMcDonalds extends JFrame implements ActionListener {
 
     public MenuMcDonalds() {
         setTitle("Menú de McDonald's");
-        setSize(500, 500);
+        setSize(500, 400);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         // Configurar los precios de los productos
@@ -49,7 +49,7 @@ public class MenuMcDonalds extends JFrame implements ActionListener {
         addButton(panelHamburguesas, "McExtreme");
         addButton(panelHamburguesas, "McNífica");
 
-        JLabel labelBegudes = new JLabel("Beufes");
+        JLabel labelBegudes = new JLabel("Begudes");
         labelBegudes.setHorizontalAlignment(JLabel.CENTER);
 
         // Crear los botones de bebidas
@@ -83,7 +83,7 @@ public class MenuMcDonalds extends JFrame implements ActionListener {
         panelPrecios.add(finishButton, BorderLayout.EAST);
 
         // Crear el panel principal
-        JPanel panelPrincipal = new JPanel(new GridLayout(0, 3));
+        JPanel panelPrincipal = new JPanel(new GridLayout(3, 4));
         panelPrincipal.add(panelHamburguesas);
         panelPrincipal.add(panelBegudes);
         panelPrincipal.add(panelPostres);
